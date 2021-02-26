@@ -1,0 +1,79 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #2c2c2c;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.flex {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo-image {
+    height: max(10vh, 100px);
+}
+.logo-text {
+    font-size: max(8vh, 40px);
+}
+.website {
+    min-width: max(150px, 20%);
+    background: rgb(34, 34, 34);
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 15px rgb(26, 26, 26));
+    transition: 0.5s ease-out;
+    padding: 10px;
+}
+.video {
+    border-radius: 10px;
+    margin: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    background: white;
+}
+.thumbnail-image {
+    width: 100%;
+    border-radius: 8px;
+}
+.description {
+    text-align: left;
+    color: black;
+    margin: 10px;
+    font-size: 20px;
+}
+.icon-image {
+    height: max(10vh, 100px);
+}
+
+.website:hover {
+    transform: scale(101%) translate(-4px, -5px);
+    filter: drop-shadow(15px 20px 25px rgb(19, 18, 18));
+}
+
+#websites {
+    background: #202020;
+    padding-top: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+#logo {
+    width: max(10%, 75px);
+}
