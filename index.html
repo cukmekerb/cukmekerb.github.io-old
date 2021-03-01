@@ -1,17 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo_masked.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <script src="index.js"></script>
     <title>cukmekerb</title>
 </head>
-<body>
-    <h1>cukmekerb</h1>
-    <img src="logo.png" class="circle" id="logo" draggable="false">
-    <section id="websites">
+
+<body onload="init()">
+    <div id="header">
+        <h1>cukmekerb</h1>
+        <img src="logo.png" class="circle" id="logo" draggable="false">
+    </div>
+
+
+    <section id="websites" class="darker">
         <h2>My Projects</h2>
         <div id="websites-div" class="flex">
             <div class="website" onclick="window.open('https:\/\/listenr.gq/')" title="Listenr">
@@ -34,13 +42,53 @@
     <section id="videos">
         <h2>My Videos</h2>
         <div id="videos-div" class="flex">
-            <div class="video">
-                <img src="https://i.ytimg.com/vi/2ObrADI1eFk/maxresdefault.jpg" class="thumbnail-image">
+            <div class="video hidden" id="video-$$INDEX%%" onclick="window.open('$$VURL%%')">
+                <img src="$$THUM%%" class="thumbnail-image">
+                <h3 class="title">$$TITLE%%</h3>
                 <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipis
+                    $$DESK%%
                 </p>
             </div>
         </div>
+        <div class="button" onclick="loadmore()">
+            <span style="vertical-align: middle; display: inline-block; line-height: 50px">Load more</span>
+        </div>
+    </section>
+    <section id="about" class="darker">
+        <br>
+        <h2>About Me</h2>
+        <p class="aboutp">
+            I'm cukmekerb, a programmer and YouTuber. I create programming tutorials every other sunday, and make
+            websites for fun. I'm also enthusiastic about free and open-source software.
+        </p>
+        <br>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div id="social-links" class="flex">
+            <div class="social" title="matrix" id="matrix" onclick="window.open('https:/\/matrix.to/#/@cukmekerb:matrix.org')">
+                [m]
+            </div>
+            <div class="social" title="discord" onclick="window.open('https:/\/discord.gg/5N2bR26yBu')">
+                <i class="fab fa-discord"></i>
+            </div>
+            <div class="social" title="reddit" onclick="window.open('https:/\/reddit.com/u/cukmekerb')">
+                <i class="fab fa-reddit"></i>
+            </div>
+            <div class="social" title="email" onclick="window.open('mailto:cukmekerb+business@gmail.com')">
+                <i class="far fa-envelope"></i>
+            </div>
+
+            <div class="social" title="youtube" onclick="window.open('https:\/\/youtube.com/cukmekerbscodingclass')">
+                <i class="fab fa-youtube"></i>
+            </div>
+            <div class="social" title="patreon" onclick="window.open('https:/\/patreon.com/cukmekerb')">
+                <i class="fab fa-patreon"></i>
+            </div>
+        </div>
+        <br>
     </section>
 </body>
+
 </html>
