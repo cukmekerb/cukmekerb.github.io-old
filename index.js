@@ -42,3 +42,12 @@ function loadmore() {
         lastv = i;
     }
 }
+
+window.onscroll = () => {
+    if(window.pageYOffset > document.getElementById("header").offsetTop) {
+        document.getElementById("header").classList.add("stuck");
+    }
+    else {
+        document.getElementById("header").classList.remove("stuck");
+    }
+}

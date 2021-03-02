@@ -11,6 +11,11 @@ body {
     margin: 0;
 }
 
+#myname {
+    display: inline;
+    padding-left: 20px;
+}
+
 .flex {
     justify-content: center;
     display: flex;
@@ -19,11 +24,17 @@ body {
 }
 
 #header {
-    /*
-    position: sticky;
     top:0;
-    use this code here for sticky header when the time comes
-    */
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    z-index: 300;
+    background: #2c2c2c;
+    transition: 0.3s;
+}
+
+#header:not(.stuck) {
+    padding: 20px;
 }
 
 .logo-image {
@@ -52,11 +63,13 @@ body {
 #videos-div {
     flex-direction: row;
 }
+
 .aboutp {
     text-align: center;
     font-size: 18px;
     padding: min(100px, 10%);
 }
+
 .social {
     font-size: 35px;
     display: flex;
@@ -72,13 +85,17 @@ body {
     transition: 0.5s;
     filter: drop-shadow(2px 1px 5px rgb(26, 26, 26));
 }
+
 #matrix {
     font-size: 24px;
+    user-select: none;
 }
+
 .social:hover {
     transform: scale(101%) translate(-1px, -1px);
     filter: drop-shadow(3px 2px 8px rgb(19, 19, 19));
 }
+
 .video {
     width: max(300px, 10%);
     border-radius: 10px;
@@ -145,10 +162,10 @@ body {
 }
 
 #websites {
-    padding-top: 20px;
-    margin-top: 20px;
+    padding-top: 40px;
     padding-bottom: 20px;
 }
+
 .darker {
     background: #202020;
 }
@@ -160,7 +177,35 @@ body {
 section {
     width: 100%;
 }
-
+.stuck ~ #header-displace {
+    height: max(5vw, 45px);
+    padding: 20px;
+    width: 100%;
+}
+#header-displace {
+    height: 0;
+}
 #logo {
-    width: max(10%, 75px);
+    transition: 0.2s ease-in;
+}
+
+:not(.stuck)>#logo {
+    width: max(5%, 45px);
+}
+
+.stuck>#logo {
+    width: max(3%, 25px);
+}
+
+.stuck > #myname {
+    font-size: 20px;
+    padding-bottom: 0; 
+    transition: 0.2s;
+}
+
+.stuck {
+    padding: 5px;
+    filter: drop-shadow(0 3px 5px rgb(22, 22, 22));
+    position: fixed;
+    width: 100%;
 }
