@@ -1,8 +1,11 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: none;
+    overflow-x: hidden;
 }
-
+*::-webkit-scrollbar {
+    display: none;
+}
 body {
     background: #2c2c2c;
     color: white;
@@ -14,6 +17,7 @@ body {
 #myname {
     display: inline;
     padding-left: 20px;
+    margin: 20px;
 }
 
 .flex {
@@ -23,9 +27,16 @@ body {
     flex-flow: row wrap;
 }
 
+a {
+    outline: 0;
+}
+
 #header {
-    top:0;
+    top: 0;
     justify-content: left;
+    position: fixed;
+    width: 100%;
+    left: 0;
     align-items: center;
     text-align: left;
     z-index: 300;
@@ -33,8 +44,9 @@ body {
     transition: 0.3s;
 }
 
-#header:not(.stuck) {
+:not(.stuck)#header {
     padding: 20px;
+    filter: drop-shadow(0 0 5px rgba(22, 22, 22, 0));
 }
 
 .logo-image {
@@ -70,6 +82,13 @@ body {
     padding: min(100px, 10%);
 }
 
+#header-links {
+    flex: 0.9 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .social {
     font-size: 35px;
     display: flex;
@@ -77,6 +96,8 @@ body {
     align-items: center;
     cursor: pointer;
     background: rgb(34, 34, 34);
+    color: white;
+    text-decoration: none;
     width: 50px;
     height: 50px;
     padding: 0;
@@ -92,19 +113,20 @@ body {
 }
 
 .social:hover {
-    transform: scale(101%) translate(-1px, -1px);
+    transform: scale(1.01) translate(-1px, -1px);
     filter: drop-shadow(3px 2px 8px rgb(19, 19, 19));
 }
 
 .video {
     width: max(300px, 10%);
+    text-decoration: none;
     border-radius: 10px;
     margin: 10px;
-    filter: drop-shadow(0 0 15px rgb(34, 34, 34));
+    filter: drop-shadow(2px 2px 18px rgb(24, 24, 24));
     padding-bottom: 5px;
     cursor: pointer;
     background: white;
-    transition: 0.3s;
+    transition: 0.5s ease-out;
 }
 
 .button {
@@ -125,12 +147,12 @@ body {
 
 .button:hover {
     filter: drop-shadow(3px 3px 10px rgb(39, 39, 39));
-    transform: scale(101%) translate(-1px, -1.5px);
+    transform: scale(1.01) translate(-1px, -1.5px);
 }
 
 .video:hover {
-    transform: scale(100.5%) translate(-2px, -2.5px);
-    filter: drop-shadow(5px 8px 25px rgb(29, 29, 29));
+    transform: scale(1.005) translate(-2px, -2.5px);
+    filter: drop-shadow(20px 15px 35px rgb(8, 8, 8));
 }
 
 .thumbnail-image {
@@ -157,7 +179,7 @@ body {
 }
 
 .website:hover {
-    transform: scale(101%) translate(-4px, -5px);
+    transform: scale(1.01) translate(-4px, -5px);
     filter: drop-shadow(15px 20px 25px rgb(19, 18, 18));
 }
 
@@ -176,15 +198,38 @@ body {
 
 section {
     width: 100%;
+    scroll-margin-top: 150px;
 }
-.stuck ~ #header-displace {
+
+.stuck~#header-displace {
     height: max(5vw, 45px);
-    padding: 20px;
+    padding: 5px;
     width: 100%;
+}
+
+:not(.stuck)~#header-displace {
+    height: max(5vw, 45px);
+    padding: 30px;
+}
+.head-link {
+    color: rgb(231, 231, 231);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 550;
+    margin-right: 20px;
+
+    filter: drop-shadow(0 0 0 rgb(39, 39, 39));
+    transition: 0.3s;
+}
+.head-link:hover {
+    color: white;
+    filter: drop-shadow(2px 1px 10px rgb(3, 3, 3));
 }
 #header-displace {
     height: 0;
+    transition: 0.25s;
 }
+
 #logo {
     transition: 0.2s ease-in;
 }
@@ -197,9 +242,9 @@ section {
     width: max(3%, 25px);
 }
 
-.stuck > #myname {
+.stuck>#myname {
     font-size: 20px;
-    padding-bottom: 0; 
+    padding-bottom: 0;
     transition: 0.2s;
 }
 

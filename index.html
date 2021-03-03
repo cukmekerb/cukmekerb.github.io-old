@@ -13,43 +13,54 @@
 </head>
 
 <body onload="init()">
-    <div id="header" class="flex">
-        <img src="logo.png" class="circle" id="logo" draggable="false">
-        <h1 id="myname">cukmekerb</h1>
+    <div>
+        <div id="header" class="flex">
+            <img src="logo.png" class="circle" id="logo" draggable="false">
+            <h1 id="myname">cukmekerb</h1>
+            <div id="header-links">
+                <a class="head-link" href="#header-displace">Projects</a>
+                <a class="head-link" href="#videos">Videos</a>
+                <a class="head-link" href="#about">About</a>
+                <a class="head-link" href="#contact">Contact</a>
+            </div>
+        </div>
+        <div id="header-displace"></div>
     </div>
-    <div id="header-displace"></div>
 
 
     <section id="websites" class="darker">
         <h2>My Projects</h2>
         <div id="websites-div" class="flex">
-            <div class="website" onclick="window.open('https:\/\/listenr.gq/')" title="Listenr">
+            <a class="website" href="https://listenr.gq/" title="Listenr" target="_blank">
                 <img src="https://listenr.gq/listenr-logo.png" class="logo-image">
-            </div>
+            </a>
 
-            <div class="website" onclick="window.open('https:\/\/speedreader.gq/')" title="SpeedReader">
+            <a class="website" href="https://speedreader.gq/" title="SpeedReader" target="_blank">
                 <img src="https://speedreader.gq/favicon.png" class="icon-image">
-            </div>
+            </a>
 
-            <div class="website" onclick="window.open('https:\/\/happyurl.gq/')" title="HappyUrl">
+            <a class="website" href="https://happyurl.gq/" title="HappyUrl" target="_blank">
                 <img src="https://happyurl.gq/rainbow.png" class="icon-image">
-            </div>
+            </a>
 
-            <div class="website" onclick="window.open('https:\/\/oatmeal.gq/')" title="Oat Clicker">
+            <a class="website" href="https://oatmeal.gq/" title="Oat Clicker" target="_blank">
                 <img src="https://oatmeal.gq/sprites/512.png" class="icon-image">
-            </div>
+            </a>
         </div>
     </section>
     <section id="videos">
         <h2>My Videos</h2>
+        <noscript>
+            <h3>You have JavaScript Disabled. These won't load without JS.</h3>
+        </noscript>
         <div id="videos-div" class="flex">
-            <div class="video hidden" id="video-$$INDEX%%" onclick="window.open('$$VURL%%')">
+            <a class="video hidden" id="video-$$INDEX%%" href="$$VURL%%" target="_blank">
                 <img src="$$THUM%%" class="thumbnail-image">
                 <h3 class="title">$$TITLE%%</h3>
                 <p class="description">
                     $$DESK%%
                 </p>
-            </div>
+            </a>
         </div>
         <div class="button" onclick="loadmore()">
             <span style="vertical-align: middle; display: inline-block; line-height: 50px">Load more</span>
@@ -68,25 +79,26 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <div id="social-links" class="flex">
-            <div class="social" title="matrix" id="matrix" onclick="window.open('https:/\/matrix.to/#/@cukmekerb:matrix.org')">
+            <a class="social" title="matrix" id="matrix" href="https://matrix.to/#/@cukmekerb:matrix.org"
+                target="_blank">
                 [m]
-            </div>
-            <div class="social" title="discord" onclick="window.open('https:/\/discord.gg/5N2bR26yBu')">
+            </a>
+            <a class="social" title="discord" href="https://discord.gg/5N2bR26yBu" target="_blank">
                 <i class="fab fa-discord"></i>
-            </div>
-            <div class="social" title="reddit" onclick="window.open('https:/\/reddit.com/u/cukmekerb')">
+            </a>
+            <a class="social" title="reddit" href="https://reddit.com/u/cukmekerb" target="_blank">
                 <i class="fab fa-reddit"></i>
-            </div>
-            <div class="social" title="email" onclick="window.open('mailto:cukmekerb+business@gmail.com')">
+            </a>
+            <a class="social" title="email" href="mailto:cukmekerb+business@gmail.com">
                 <i class="far fa-envelope"></i>
-            </div>
+            </a>
 
-            <div class="social" title="youtube" onclick="window.open('https:\/\/youtube.com/cukmekerbscodingclass')">
+            <a class="social" title="youtube" href="https://youtube.com/cukmekerbscodingclass" target="_blank">
                 <i class="fab fa-youtube"></i>
-            </div>
-            <div class="social" title="patreon" onclick="window.open('https:/\/patreon.com/cukmekerb')">
+            </a>
+            <a class="social" title="patreon" href="https://patreon.com/cukmekerb" target="_blank">
                 <i class="fab fa-patreon"></i>
-            </div>
+            </a>
         </div>
         <br>
     </section>
