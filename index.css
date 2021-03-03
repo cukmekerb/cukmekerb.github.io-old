@@ -3,9 +3,11 @@ html {
     scrollbar-width: none;
     overflow-x: hidden;
 }
+
 *::-webkit-scrollbar {
     display: none;
 }
+
 body {
     background: #2c2c2c;
     color: white;
@@ -29,6 +31,7 @@ body {
 
 a {
     outline: 0;
+    color: white;
 }
 
 #header {
@@ -129,6 +132,13 @@ a {
     transition: 0.5s ease-out;
 }
 
+.middle-height-span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 50px
+}
+
+
 .button {
     border-radius: 5px;
     text-align: center;
@@ -141,6 +151,7 @@ a {
     filter: drop-shadow(2px 2px 5px rgb(34, 34, 34));
     cursor: pointer;
     margin-bottom: 20px;
+    user-select: none;
     margin-top: 20px;
     transition: 0.2s;
 }
@@ -211,23 +222,30 @@ section {
     height: max(5vw, 45px);
     padding: 30px;
 }
+
 .head-link {
     color: rgb(231, 231, 231);
     text-decoration: none;
     font-size: 16px;
     font-weight: 550;
     margin-right: 20px;
-
     filter: drop-shadow(0 0 0 rgb(39, 39, 39));
     transition: 0.3s;
 }
+
 .head-link:hover {
     color: white;
     filter: drop-shadow(2px 1px 10px rgb(3, 3, 3));
 }
+
 #header-displace {
     height: 0;
     transition: 0.25s;
+}
+
+#logo-404 {
+    margin-top: 20px;
+    width: max(15%, 150px);
 }
 
 #logo {

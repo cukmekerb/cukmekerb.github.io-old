@@ -1,0 +1,22 @@
+{
+    "short_name": "Cukmekerb",
+    "name": "Cukmekerb",
+    "icons": [
+        {
+            "src": "cukmekerb-logo-massive.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
+        },
+        {
+            "src": "logo-masked.png",
+            "type": "image/png",
+            "sizes": "200x200"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#2c2c2c",
+    "orientation": "portrait",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#202020"
+}
