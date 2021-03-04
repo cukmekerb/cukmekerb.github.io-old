@@ -1,13 +1,13 @@
-var whathasbeenloaded;
 var lastv;
 function init() {
-    fetch("https://script.google.com/macros/s/AKfycbzIGRdRRbcZtXBVLuvzSs3mlF0Va9kT7_aiWR0G6oU0hjhC__o/exec")
+    fetch("https://lstnr.gq/.netlify/functions/rss-to-json?url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCzSlF1euionqDthloMy2R-Q")
         .then(a => a.json())
         .then(response => {
-            whathasbeenloaded = response;
+            response = response.items;
             for (var i = 0; i < 15; i++) {
+                response[i].thumbnail = `https://i.ytimg.com/vi/${response[i].id.replace("yt:video:","")}/mqdefault.jpg`;
                 var current_video = document.getElementById("video-$$INDEX%%").outerHTML;
-                current_video = current_video.replace("$$VURL%%", "https:\/\/youtu.be/" + response[i].id)
+                current_video = current_video.replace("$$VURL%%", "https:\/\/youtu.be/" + response[i].id.replace("yt:video:",""))
                 current_video = current_video.replace(" hidden", "");
                 current_video = current_video.replace("$$THUM%%", response[i].thumbnail);
                 current_video = current_video.replace("$$INDEX%%", i);
