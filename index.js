@@ -1,13 +1,13 @@
 var lastv;
 function init() {
-    fetch("https://lstnr.gq/.netlify/functions/rss-to-json?url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCzSlF1euionqDthloMy2R-Q")
+    fetch("https://lstnr.gq/.netlify/functions/rss-to-json?url=https://odysee.com/$/rss/@cukmekerb/19ec35dcb324ee80b86acbee9cf2c613546f6ad6")
         .then(a => a.json())
         .then(response => {
             response = response.items;
             for (var i = 0; i < 15; i++) {
-                response[i].thumbnail = `https://i.ytimg.com/vi/${response[i].id.replace("yt:video:","")}/mqdefault.jpg`;
+                response[i].thumbnail = response[i].enclosures[0].url;
                 var current_video = document.getElementById("video-$$INDEX%%").outerHTML;
-                current_video = current_video.replace("$$VURL%%", "https:\/\/youtu.be/" + response[i].id.replace("yt:video:",""))
+                current_video = current_video.replace("$$VURL%%",  response[i].url)
                 current_video = current_video.replace(" hidden", "");
                 current_video = current_video.replace("$$THUM%%", response[i].thumbnail);
                 current_video = current_video.replace("$$INDEX%%", i);
@@ -21,7 +21,7 @@ function init() {
                 document.getElementById("videos-div").innerHTML += current_video;
                 lastv = i;
             }
-        })
+        });
 }
 
 window.onscroll = () => {
@@ -31,4 +31,4 @@ window.onscroll = () => {
     else {
         document.getElementById("header").classList.remove("stuck");
     }
-}
+};
