@@ -4,9 +4,9 @@ function init() {
         .then(a => a.json())
         .then(response => {
             response = response.items;
-            for (var i = 0; i < 15; i++) {
+            for (let i = 0; i < 15; i++) {
                 response[i].thumbnail = `https://i.ytimg.com/vi/${response[i].id.replace("yt:video:","")}/mqdefault.jpg`;
-                var current_video = document.getElementById("video-$$INDEX%%").outerHTML;
+                let current_video = document.getElementById("video-$$INDEX%%").outerHTML;
 								current_video = current_video.replace("$$VURL%%", "https:\/\/youtu.be/" + response[i].id.replace("yt:video:",""))
                 current_video = current_video.replace(" hidden", "");
                 current_video = current_video.replace("$$THUM%%", response[i].thumbnail);
@@ -25,7 +25,7 @@ function init() {
 }
 
 window.onscroll = () => {
-    if(window.pageYOffset >= document.getElementById("header").offsetTop +0.3) {
+    if (window.pageYOffset >= document.getElementById("header").offsetTop + 0.3) {
         document.getElementById("header").classList.add("stuck");
     }
     else {
