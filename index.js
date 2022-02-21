@@ -1,6 +1,6 @@
 var lastv;
 function init() {
-    fetch("https://lstnr.gq/.netlify/functions/rss-to-json?url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCzSlF1euionqDthloMy2R-Q")
+    fetch("https://listenr2.netlify.app/api/rss?url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCzSlF1euionqDthloMy2R-Q")
         .then(a => a.json())
         .then(response => {
             response = response.items;
